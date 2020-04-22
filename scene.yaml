@@ -243,14 +243,14 @@ layers:
             polygons:
                 style: stripes-earth
                 order: global.feature_order
-                color: [0.000,0.000,0.000]
+                color: [0.985,0.985,0.985]
 
     water:
         data: { source: mapzen, layer: water }
         draw:
             polygons:
                 style: stripes-water
-                color: [1.000,1.000,1.000]
+                color: [0.080,0.080,0.080]
                 order: global.feature_order
 
         lakes:
@@ -277,11 +277,11 @@ layers:
                 #     - { $zoom: { min: 15 } }
             draw:
                 polygons:
-                    color: [1.000,1.000,1.000]
+                    color: [0.080,0.080,0.080]
 
     landuse:
         data: { source: mapzen }
-        enabled: true
+        enabled: false
         draw:
             polygons:
                 order: global.feature_order
@@ -382,7 +382,7 @@ layers:
             polygons:
                 visible: false
                 order: 529
-                color: [1.000,1.000,1.000]
+                color: [0.850,0.850,0.850]
             lines:
                 visible: false
                 order: 529
@@ -407,23 +407,23 @@ layers:
             #             color: [0.500,0.500,0.500]
             #             extrude: global.building_extrude_height
 
-        in_hospital:
-            filter: { landuse_kind: hospital }
-            draw:
-                polygons:
-                    style: stripes-hospital-bldgs
-                    color: [1.000,1.000,1.000]
+        # in_hospital:
+        #     filter: { landuse_kind: hospital }
+        #     draw:
+        #         polygons:
+        #             style: stripes-hospital-bldgs
+        #             color: [1.000,1.000,1.000]
 
-        in_university:
-            filter: { landuse_kind: [university,school] }
-            draw:
-                polygons:
-                    style: stripes-university-bldgs
-                    color: [0.000,0.000,0.000]
+        # in_university:
+        #     filter: { landuse_kind: [university,school] }
+        #     draw:
+        #         polygons:
+        #             style: stripes-university-bldgs
+        #             color: [0.000,0.000,0.000]
 
     places:
         data: { source: mapzen, layer: places }
-        enabled: true
+        enabled: false
         filter:
             name: true
         draw:
@@ -598,14 +598,14 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .25
+                STRIPES_WIDTH: .65
                 STRIPES_ALPHA: 1.0
-                STRIPES_SCALE: 0.5
+                STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(0.000),stripes(st*37.,
+                    color.rgb = mix(color.rgb,vec3(0.000),stripes(st*5.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
@@ -614,14 +614,14 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .25
+                STRIPES_WIDTH: .75
                 STRIPES_ALPHA: 1.0
-                STRIPES_SCALE: 0.5
+                STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(1.000),stripes(st*37.,
+                    color.rgb = mix(color.rgb,vec3(1.000),stripes(st*15.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
@@ -630,14 +630,14 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .09
+                STRIPES_WIDTH: .95
                 STRIPES_ALPHA: 1.0
-                STRIPES_SCALE: 0.1
+                STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(0.000),stripes(st*37.,
+                    color.rgb = mix(color.rgb,vec3(0.250),stripes(st*70.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
