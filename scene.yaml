@@ -281,7 +281,7 @@ layers:
 
     landuse:
         data: { source: mapzen }
-        enabled: false
+        enabled: true
         draw:
             polygons:
                 order: global.feature_order
@@ -300,77 +300,77 @@ layers:
                     color: [1.000,1.000,1.000]
                     visible: true
 
-        universities-schools:
-            filter:
-                kind: [university, college, school]
-            draw:
-                polygons:
-                    style: stripes-university
-                    color: [1.000,1.000,1.000]
-                    visible: true
+        # universities-schools:
+        #     filter:
+        #         kind: [university, college, school]
+        #     draw:
+        #         polygons:
+        #             style: stripes-university
+        #             color: [1.000,1.000,1.000]
+        #             visible: true
 
-        gardens-playgrounds:
-            filter:
-                kind: [garden, playground]
-            draw:
-                polygons:
-                    style: stripes-garden
-                    color: [1.000,1.000,1.000]
-                    visible: true
+        # gardens-playgrounds:
+        #     filter:
+        #         kind: [garden, playground]
+        #     draw:
+        #         polygons:
+        #             style: stripes-garden
+        #             color: [1.000,1.000,1.000]
+        #             visible: true
 
-        pitch:
-            filter:
-                kind: pitch
-            draw:
-                polygons:
-                    style: stripes-pitch
-                    color: [0.000,0.000,0.000]
-                    visible: true
+        # pitch:
+        #     filter:
+        #         kind: pitch
+        #     draw:
+        #         polygons:
+        #             style: stripes-pitch
+        #             color: [0.000,0.000,0.000]
+        #             visible: true
 
-        golf_course:
-            filter:
-                kind: golf_course
-            draw:
-                polygons:
-                    style: stripes-golf
-                    color: [1.000,1.000,1.000]
-                    visible: true
+        # golf_course:
+        #     filter:
+        #         kind: golf_course
+        #     draw:
+        #         polygons:
+        #             style: stripes-golf
+        #             color: [1.000,1.000,1.000]
+        #             visible: true
 
-        pedestrian:
-            filter:
-                kind: [pedestrian,common,footway]
-            draw:
-                polygons:
-                    style: stripes-pedestrian
-                    color: [0.000,0.000,0.000]
-                    visible: true
+        # pedestrian:
+        #     filter:
+        #         kind: [pedestrian,common,footway]
+        #     draw:
+        #         polygons:
+        #             style: stripes-pedestrian
+        #             color: [0.000,0.000,0.000]
+        #             visible: true
 
-        beach:
-            filter:
-                kind: beach
-            draw:
-                polygons:
-                    style: stripes-beach
-                    color: [0.000,0.000,0.000]
-                    visible: true
+        # beach:
+        #     filter:
+        #         kind: beach
+        #     draw:
+        #         polygons:
+        #             style: stripes-beach
+        #             color: [0.000,0.000,0.000]
+        #             visible: true
 
-        cemetery:
-            filter:
-                kind: cemetery
-            draw:
-                polygons:
-                    style: stripes-cemetery
-                    color: [0.000,0.000,0.000]
-                    visible: true
+        # cemetery:
+        #     filter:
+        #         kind: cemetery
+        #     draw:
+        #         polygons:
+        #             style: stripes-cemetery
+        #             color: [0.000,0.000,0.000]
+        #             visible: true
 
-        hospital:
-            filter:
-                kind: hospital
-            draw:
-                polygons:
-                    style: stripes-hospital
-                    color: [0.000,0.000,0.000]
-                    visible: true
+        # hospital:
+        #     filter:
+        #         kind: hospital
+        #     draw:
+        #         polygons:
+        #             style: stripes-hospital
+        #             color: [0.000,0.000,0.000]
+        #             visible: true
 
 
     buildings:
@@ -423,7 +423,7 @@ layers:
 
     places:
         data: { source: mapzen, layer: places }
-        enabled: false
+        enabled: true
         filter:
             name: true
         draw:
@@ -630,14 +630,14 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .95
+                STRIPES_WIDTH: .925
                 STRIPES_ALPHA: 1.0
                 STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(0.250),stripes(st*70.,
+                    color.rgb = mix(color.rgb,vec3(0.250),stripes(st*60.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
@@ -678,14 +678,14 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .9
+                STRIPES_WIDTH: .1
                 STRIPES_ALPHA: 1.0
                 STRIPES_SCALE: 0.7
                 STRIPES_ANGLE: 3.14159265
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(0.000),stripes(st*85.,
+                    color.rgb = mix(color.rgb,vec3(0.940),stripes(st*25.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
@@ -694,14 +694,14 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .75
+                STRIPES_WIDTH: .65
                 STRIPES_ALPHA: 1.0
-                STRIPES_SCALE: 0.7
+                STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(0.000),stripes(st*105.,
+                    color.rgb = mix(color.rgb,vec3(0.000),stripes(st*25.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
