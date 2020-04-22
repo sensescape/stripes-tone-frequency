@@ -351,7 +351,7 @@ layers:
             draw:
                 polygons:
                     style: stripes-beach
-                    color: [0.990,0.990,0.990]
+                    color: [0.980,0.980,0.980]
                     visible: true
 
         # cemetery:
@@ -621,7 +621,7 @@ styles:
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(1.000),stripes(st*15.,
+                    color.rgb = mix(color.rgb,vec3(0.950),stripes(st*15.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
@@ -685,7 +685,7 @@ styles:
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(0.925),stripes(st*25.,
+                    color.rgb = mix(color.rgb,vec3(0.915),stripes(st*25.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
@@ -742,7 +742,7 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .5
+                STRIPES_WIDTH: .2
                 STRIPES_ALPHA: 1.0
                 STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
