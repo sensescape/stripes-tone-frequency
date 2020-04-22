@@ -243,7 +243,7 @@ layers:
             polygons:
                 style: stripes-earth
                 order: global.feature_order
-                color: [0.985,0.985,0.985]
+                color: [0.975,0.975,0.975]
 
     water:
         data: { source: mapzen, layer: water }
@@ -345,14 +345,14 @@ layers:
         #             color: [0.000,0.000,0.000]
         #             visible: true
 
-        # beach:
-        #     filter:
-        #         kind: beach
-        #     draw:
-        #         polygons:
-        #             style: stripes-beach
-        #             color: [0.000,0.000,0.000]
-        #             visible: true
+        beach:
+            filter:
+                kind: beach
+            draw:
+                polygons:
+                    style: stripes-beach
+                    color: [0.990,0.990,0.990]
+                    visible: true
 
         # cemetery:
         #     filter:
@@ -363,14 +363,14 @@ layers:
         #             color: [0.000,0.000,0.000]
         #             visible: true
 
-        # hospital:
-        #     filter:
-        #         kind: hospital
-        #     draw:
-        #         polygons:
-        #             style: stripes-hospital
-        #             color: [0.000,0.000,0.000]
-        #             visible: true
+        hospital:
+            filter:
+                kind: hospital
+            draw:
+                polygons:
+                    style: stripes-hospital
+                    color: [0.880,0.880,0.880]
+                    visible: true
 
 
     buildings:
@@ -382,7 +382,7 @@ layers:
             polygons:
                 visible: false
                 order: 529
-                color: [0.850,0.850,0.850]
+                color: [0.830,0.830,0.830]
             lines:
                 visible: false
                 order: 529
@@ -407,12 +407,12 @@ layers:
             #             color: [0.500,0.500,0.500]
             #             extrude: global.building_extrude_height
 
-        # in_hospital:
-        #     filter: { landuse_kind: hospital }
-        #     draw:
-        #         polygons:
-        #             style: stripes-hospital-bldgs
-        #             color: [1.000,1.000,1.000]
+        in_hospital:
+            filter: { landuse_kind: hospital }
+            draw:
+                polygons:
+                    style: stripes-hospital-bldgs
+                    color: [0.450,0.450,0.450]
 
         # in_university:
         #     filter: { landuse_kind: [university,school] }
@@ -598,7 +598,7 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .65
+                STRIPES_WIDTH: .725
                 STRIPES_ALPHA: 1.0
                 STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
@@ -646,14 +646,14 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .45
+                STRIPES_WIDTH: .925
                 STRIPES_ALPHA: 1.0
                 STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(0.000),stripes(st*37.,
+                    color.rgb = mix(color.rgb,vec3(0.000),stripes(st*60.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
@@ -662,14 +662,14 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .35
+                STRIPES_WIDTH: .95
                 STRIPES_ALPHA: 1.0
                 STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(1.000),stripes(st*37.,
+                    color.rgb = mix(color.rgb,vec3(1.000),stripes(st*25.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
@@ -685,7 +685,7 @@ styles:
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(0.940),stripes(st*25.,
+                    color.rgb = mix(color.rgb,vec3(0.925),stripes(st*25.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
@@ -742,14 +742,14 @@ styles:
         mix: [functions-aastep, patterns-stripes, space-screen]
         shaders:
             defines:
-                STRIPES_WIDTH: .1
+                STRIPES_WIDTH: .5
                 STRIPES_ALPHA: 1.0
                 STRIPES_SCALE: 1.0
                 STRIPES_ANGLE: 3.14159265
             blocks:
                 color: |
                     vec2 st = getScreenNonStretchCoords();
-                    color.rgb = mix(color.rgb,vec3(1.000),stripes(st*10.,
+                    color.rgb = mix(color.rgb,vec3(1.000),stripes(st*25.,
                                         STRIPES_WIDTH,
                                         STRIPES_ANGLE));
 
