@@ -1,4 +1,6 @@
-### Stripes Frequency
+### Stripes - Tone - Frequency
+
+![New York](https://raw.githubusercontent.com/sensescape/stripes-tone-frequency/master/images/newyork-stripes.jpg)
 
 A visual study of stripes. 
 
